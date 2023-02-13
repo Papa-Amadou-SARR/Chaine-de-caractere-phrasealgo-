@@ -1,0 +1,32 @@
+ALGORITHM algorithm_name
+VAR
+    ch: STRING;
+    cptL:INTEGER:=0;
+    cptM:INTEGER:=0;
+    cptV:INTEGER:=0;
+    i:INTEGER:=1;
+BEGIN
+    Read(ch)
+    cptL:=length(ch);
+
+    FOR i FROM 1 TO cptL STEP step  DO
+
+        IF (i<=cptL And ch[i]<>' ') THEN
+         cptM:=cptM+1;
+         i:=i+1;
+        END_IF
+
+        WHILE (i<=cptL And ch[i]=' ') DO
+            i:=i+1;
+        END_WHILE
+
+        IF (i<=cptL And ch[i]='a' Or ch[i]='0' Or ch[i]='i' Or ch[i]='e'  Or ch[i]='u' Or ch[i]='y') THEN
+            cptV:=cptV+1;
+        END_IF
+
+    END_FOR
+
+    Write(cptL)
+    Write(cptM)
+    Write(cptV)
+END
